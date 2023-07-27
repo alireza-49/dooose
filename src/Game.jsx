@@ -42,11 +42,11 @@ const Game = ({userNames}) => {
                 navigate('/winner/' + winnerId)
             }
         }
-    })
+    },[board])
     //on every move change ui and update button and board
     const handleBoard = (e,position) => {
         e.target.disabled = true;
-        const temp = board;
+        const temp = [...board];
         temp[position[0]][position[1]] = turn;
         setBoard(temp)
         setTurn(turn === 1 ? 2 : 1)
