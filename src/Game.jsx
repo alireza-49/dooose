@@ -63,7 +63,7 @@ const Game = ({userNames}) => {
                             const position = [rowNumber,columnNumber]
                             return(
                                 <button className={'board-item ' + `item${board[rowNumber][columnNumber]}`}  key={rowNumber + ' ' + columnNumber}
-                                    onClick={(e)=>{handleBoard(e,position)}}>
+                                    onClick={(e)=>{e.target.disabled ?null :handleBoard(e,position)}}>
                                     {board[rowNumber][columnNumber] == 1 ? <PanoramaFishEyeIcon/> : (board[rowNumber][columnNumber] == 2 ? <CloseIcon />:null)}
                                 </button>
                             )
